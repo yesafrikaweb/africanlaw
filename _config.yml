@@ -1,5 +1,3 @@
-title: AfricanLaw Open Legislation
-description: Public Domain Legal Repository styled after official open-data gazette patterns.
-markdown: kramdown
-baseurl: "/africanlaw" # <--- Add this line
-url: "https://yesafrikaweb.github.io" # <--- Add this line
+title: My Markdown Site
+description: Builtout environment
+theme: jekyll-theme-minimal
