@@ -1,3 +1,5 @@
-title: My Markdown Site
-description: Builtout environment
+title: "AfricanLaw Open Legislation"
+description: "Public Domain Legal Repository"
 theme: jekyll-theme-minimal
+baseurl: "/africanlaw"
+url: "https://yesafrikaweb.github.io"
