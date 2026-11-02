@@ -59,10 +59,11 @@
     <div class="container">
         <aside>
             <nav>
-                <h3>Document Contents</h3>
+                <h3>Document Index</h3>
                 <ul>
-                    <li><a href="#section-1">1. Short title</a></li>
-                    <li><a href="#section-2">2. Interpretation</a></li>
+                    {% for post in site.posts %}
+                    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                    {% endfor %}
                 </ul>
             </nav>
         </aside>
