@@ -182,31 +182,31 @@
         <a href="{{ site.baseurl }}/about">About us</a>
     </nav>
 
-    <!-- Dark Search Banner Toolbar -->
-    <div class="search-banner">
+    <!-- Dark Search Banner Toolbar Form -->
+    <form class="search-banner" action="{{ site.baseurl }}/search" method="get">
         <div class="search-field-group">
             <label for="search-title">Title:</label>
-            <input type="text" id="search-title" placeholder="e.g. Arbitration Act">
+            <input type="text" id="search-title" name="q" placeholder="e.g. Arbitration Act">
         </div>
         <div class="search-field-group">
             <label for="search-year">Year:</label>
-            <input type="text" id="search-year" placeholder="1996">
+            <input type="text" id="search-year" name="year" placeholder="1996">
         </div>
         <div class="search-field-group">
             <label for="search-number">Number:</label>
-            <input type="text" id="search-number" placeholder="23">
+            <input type="text" id="search-number" name="number" placeholder="23">
         </div>
         <div class="search-field-group">
             <label for="search-type">Type:</label>
-            <select id="search-type">
-                <option>All African Legislation</option>
-                <option>Model Acts & Statutes</option>
-                <option>Constitutional Texts</option>
+            <select id="search-type" name="type">
+                <option value="all">All African Legislation</option>
+                <option value="model">Model Acts & Statutes</option>
+                <option value="constitutional">Constitutional Texts</option>
             </select>
         </div>
-        <button class="search-btn">Search</button>
-        <a href="#" class="advanced-search-link">Advanced Search</a>
-    </div>
+        <button type="submit" class="search-btn">Search</button>
+        <a href="{{ site.baseurl }}/search/advanced" class="advanced-search-link">Advanced Search</a>
+    </form>
 
     <div class="breadcrumb-bar">
         <a href="{{ site.baseurl }}/">Home</a> &gt; <span>{{ page.title }}</span>
