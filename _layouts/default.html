@@ -147,6 +147,15 @@
         p.provision-text { margin-bottom: 16px; font-size: 1.1rem; line-height: 1.6; }
 
         footer { background-color: var(--gov-bg); border-top: 1px solid var(--gov-border); padding: 24px; text-align: center; font-size: 0.875rem; color: #505a5f; margin-top: 60px; }
+
+        /* Print-Friendly Stylesheet */
+        @media print {
+            .govuk-header-stripe, header, .site-nav, .search-banner, .breadcrumb-bar, aside, footer {
+                display: none !important;
+            }
+            .container { display: block; padding: 0; }
+            main { max-width: 100%; }
+        }
     </style>
 </head>
 <body>
