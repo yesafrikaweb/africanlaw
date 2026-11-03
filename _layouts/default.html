@@ -1,3 +1,6 @@
+---
+# This front matter ensures Jekyll processes this file as a layout template
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,4 +18,222 @@
             --text-color: #0b0c0c;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--text-color); background-color: var(--gov-white); line-height: 1.5; }
+        
+        /* Top Accent Bar */
+        .govuk-header-stripe { background-color: var(--gov-blue); height: 8px; width: 100%; border-bottom: 2px solid var(--gov-link); }
+        
+        /* Main Header Area */
+        header { 
+            background-color: var(--gov-white); 
+            color: var(--text-color); 
+            padding: 20px 24px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1px solid var(--gov-border);
+        }
+        header .brand-container { display: flex; align-items: center; gap: 16px; text-decoration: none; }
+        header .site-title { font-size: 1.75rem; font-weight: 700; color: var(--gov-blue); text-decoration: none; letter-spacing: -0.5px; }
+        header .site-title span { font-weight: 400; color: #505a5f; }
+
+        /* Navigation Bar with Dividers */
+        .site-nav {
+            background-color: var(--gov-white);
+            border-bottom: 1px solid var(--gov-border);
+            padding: 10px 24px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            font-size: 0.95rem;
+            overflow-x: auto;
+        }
+        .site-nav a {
+            color: var(--gov-link);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .site-nav a:hover {
+            text-decoration: underline;
+            color: var(--gov-link-hover);
+        }
+        .site-nav span.separator {
+            color: var(--gov-border);
+            font-weight: 300;
+        }
+
+        /* Search Banner Toolbar */
+        .search-banner {
+            background-color: #222222;
+            color: var(--gov-white);
+            padding: 16px 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: flex-end;
+            border-bottom: 3px solid var(--gov-link);
+        }
+        .search-field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .search-field-group label {
+            font-size: 0.85rem;
+            color: #d0d0d0;
+        }
+        .search-field-group input, 
+        .search-field-group select {
+            padding: 8px 10px;
+            font-size: 0.95rem;
+            border: 1px solid var(--gov-border);
+            border-radius: 2px;
+            background-color: var(--gov-white);
+            color: var(--text-color);
+        }
+        .search-field-group input#search-title { width: 320px; }
+        .search-field-group input#search-year,
+        .search-field-group input#search-number { width: 80px; }
+        .search-field-group select#search-type { width: 280px; }
+        
+        .search-btn {
+            background-color: var(--gov-link);
+            color: var(--gov-white);
+            border: none;
+            padding: 9px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+        .search-btn:hover { background-color: var(--gov-link-hover); }
+        
+        .advanced-search-link {
+            color: var(--gov-white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            align-self: center;
+            margin-left: auto;
+        }
+        .advanced-search-link:hover { text-decoration: underline; }
+
+        @media (max-width: 900px) {
+            .search-banner { flex-direction: column; align-items: stretch; }
+            .search-field-group input#search-title,
+            .search-field-group select#search-type { width: 100%; }
+            .advanced-search-link { margin-left: 0; }
+        }
+        
+        .breadcrumb-bar { background-color: var(--gov-bg); padding: 10px 24px; font-size: 0.875rem; border-bottom: 1px solid var(--gov-border); }
+        .breadcrumb-bar a { color: var(--gov-link); text-decoration: none; }
+
+        .container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 280px 1fr; gap: 40px; padding: 30px 24px; }
+        @media (max-width: 768px) { .container { grid-template-columns: 1fr; } }
+
+        aside nav h3 { font-size: 1rem; margin-bottom: 12px; text-transform: uppercase; color: #505a5f; }
+        aside ul { list-style: none; border-left: 2px solid var(--gov-border); padding-left: 12px; }
+        aside ul li { margin-bottom: 8px; }
+        aside ul li a { color: var(--gov-link); text-decoration: none; font-size: 0.95rem; }
+
+        main { max-width: 768px; }
+        .document-metadata { font-size: 0.875rem; color: #505a5f; margin-bottom: 16px; text-transform: uppercase; }
+        h1.document-title { font-size: 2.25rem; font-weight: 700; line-height: 1.15; margin-bottom: 24px; }
+
+        .section-block { margin-bottom: 40px; position: relative; }
+        .section-number { position: absolute; left: -60px; font-weight: bold; color: #505a5f; font-size: 0.9rem; }
+        @media (max-width: 1000px) { .section-number { position: static; display: block; margin-bottom: 4px; } }
+        .section-header { font-size: 1.25rem; font-weight: 600; margin-bottom: 12px; }
+        p.provision-text { margin-bottom: 16px; font-size: 1.1rem; line-height: 1.6; }
+
+        footer { background-color: var(--gov-bg); border-top: 1px solid var(--gov-border); padding: 24px; text-align: center; font-size: 0.875rem; color: #505a5f; margin-top: 60px; }
+    </style>
+</head>
+<body>
+
+    <!-- Top Accent Bar -->
+    <div class="govuk-header-stripe"></div>
+
+    <!-- Main Header Area -->
+    <header>
+        <a href="{{ site.baseurl }}/" class="brand-container">
+            <div class="site-title">africanlaw<span>.org</span></div>
+        </a>
+        <div style="font-size: 0.875rem; color: #505a5f; text-transform: uppercase; letter-spacing: 0.5px;">Public Domain Legal Repository</div>
+    </header>
+
+    <!-- Sub-navigation with vertical separators -->
+    <nav class="site-nav" aria-label="Header Navigation">
+        <a href="{{ site.baseurl }}/">Home</a>
+        <span class="separator">|</span>
+        <a href="{{ site.baseurl }}/collections">Explore our collections</a>
+        <span class="separator">|</span>
+        <a href="{{ site.baseurl }}/tools">Research tools</a>
+        <span class="separator">|</span>
+        <a href="{{ site.baseurl }}/guidance">Help and guidance</a>
+        <span class="separator">|</span>
+        <a href="{{ site.baseurl }}/whats-new">What's new</a>
+        <span class="separator">|</span>
+        <a href="{{ site.baseurl }}/about">About us</a>
+    </nav>
+
+    <!-- Dark Search Banner Toolbar -->
+    <div class="search-banner">
+        <div class="search-field-group">
+            <label for="search-title">Title:</label>
+            <input type="text" id="search-title" placeholder="e.g. Arbitration Act">
+        </div>
+        <div class="search-field-group">
+            <label for="search-year">Year:</label>
+            <input type="text" id="search-year" placeholder="1996">
+        </div>
+        <div class="search-field-group">
+            <label for="search-number">Number:</label>
+            <input type="text" id="search-number" placeholder="23">
+        </div>
+        <div class="search-field-group">
+            <label for="search-type">Type:</label>
+            <select id="search-type">
+                <option>All African Legislation</option>
+                <option>Model Acts & Statutes</option>
+                <option>Constitutional Texts</option>
+            </select>
+        </div>
+        <button class="search-btn">Search</button>
+        <a href="#" class="advanced-search-link">Advanced Search</a>
+    </div>
+
+    <div class="breadcrumb-bar">
+        <a href="{{ site.baseurl }}/">Home</a> &gt; <span>{{ page.title }}</span>
+    </div>
+
+    <div class="container">
+        <aside>
+            <nav>
+                <h3>Document Index</h3>
+                <ul>
+                    {% if site.posts %}
+                        {% for post in site.posts %}
+                        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                        {% endfor %}
+                    {% endif %}
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <div class="document-metadata">African Model Legislation Archive</div>
+            <h1 class="document-title">{{ page.title }}</h1>
+            
+            <div class="legislation-provisions">
+                {{ content }}
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>Powered by GitHub Pages &bull; Designed after official open-data gazette patterns.</p>
+    </footer>
+
+</body>
+</html>
